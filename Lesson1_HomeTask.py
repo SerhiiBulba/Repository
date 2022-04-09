@@ -17,6 +17,8 @@ res = int1 // int2
 print(res)
 res = int2 % int1
 print(res)
+print('Arithmetic actions done')
+
 
 
 
