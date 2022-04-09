@@ -3,13 +3,20 @@
 #Задача3: Створіть змінну - результат конкатенації (складання) строк str1="Hello " и str2="world". Виведіть на екран.
 int1 = 10
 int2 = 30
-result = int1 + int2
-print(result)
-result = int1 * int2
-print(result)
-result = int1 / int2
-print(result)
-result = int1 - int2
-print(result)
-result = int1 ** int2
-print(result)
+res = int1 + int2
+print(res)
+res = int1 * int2
+print(res)
+res = int1 / int2
+print(res)
+res = int1 - int2
+print(res)
+res = int1 ** int2
+print(res)
+res = int1 // int2
+print(res)
+res = int2 % int1
+print(res)
+
+
+
