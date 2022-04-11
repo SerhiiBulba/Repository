@@ -19,3 +19,14 @@ else:
     print('is')
     print('True')
     print(123)
+
+condition = a != b
+if condition:
+    print('True')
+else:
+    print('False')
+
+if 0:
+    print('True')
+else:
+    print('False')
