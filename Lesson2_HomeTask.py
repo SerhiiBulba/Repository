@@ -8,20 +8,23 @@
 # - якщо вік користувача складається з однакових цифр (11, 22, 44 і тд років, всі можливі варіанти!) - вивести "Який цікавий вік!"
 # - у будь-якому іншому випадку - вивести "А білетів вже немає!"
 
+from mailbox import mbox, mboxMessage
+from tkinter import messagebox
+from tkinter.messagebox import showinfo
 import turtle
 sc = turtle.Screen()
 sc.setup(500, 300)
 str_var = turtle.textinput('TicketBox', 'Please, input your age')
 age = int(str_var)
 if age < 7:
-    turtle.textinput('TicketBox', 'Where are your patents ?')
+    messagebox.showinfo('Box info','Where are your parents ?')
 elif age > 7 and age < 16:
-    turtle.textinput('TicketBox', 'This film is for adults only! Sorry, cannot sell the tickets?')
+    messagebox.showinfo('Box info','This film is for adults only! Sorry, cannot sell the tickets ?')
 elif age > 65 and age % 11 != 0:
-    turtle.textinput('TicketBox', 'Please, show your pension certificate?')
+    messagebox.showinfo('Box info', 'Please, show your pension certificate?')
 elif age > 16 and age % 11 == 0:
-    turtle.textinput('TicketBox', 'What an amazing age!')
+    messagebox.showinfo('Box info', 'What an amazing age!')
 else:
-    turtle.textinput('TicketBox', 'Sorry, no tickets available')
+    messagebox.showinfo('Box info', 'Sorry, no tickets available')
 
 # Consern: based on the task description there is no tickets availability for the adults of the age 16-65
