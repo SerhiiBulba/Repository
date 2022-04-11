@@ -8,18 +8,20 @@
 # - якщо вік користувача складається з однакових цифр (11, 22, 44 і тд років, всі можливі варіанти!) - вивести "Який цікавий вік!"
 # - у будь-якому іншому випадку - вивести "А білетів вже немає!"
 
-print('Please, input your age:')
-str_var = input()
-a = int(str_var)
-if a < 7:
-    print('Where are your parents?')
-elif a > 7 and a < 16:
-    print('This film is for adults only! Sorry, cannot sell the tickets.')
-elif a > 65 and a % 11 != 0:
-    print('Please, show your pension certificate')
-elif a > 16 and a % 11 == 0:
-    print ('What an amazing age!')
+import turtle
+sc = turtle.Screen()
+sc.setup(500, 300)
+str_var = turtle.textinput('TicketBox', 'Please, input your age')
+age = int(str_var)
+if age < 7:
+    turtle.textinput('TicketBox', 'Where are your patents ?')
+elif age > 7 and age < 16:
+    turtle.textinput('TicketBox', 'This film is for adults only! Sorry, cannot sell the tickets?')
+elif age > 65 and age % 11 != 0:
+    turtle.textinput('TicketBox', 'Please, show your pension certificate?')
+elif age > 16 and age % 11 == 0:
+    turtle.textinput('TicketBox', 'What an amazing age!')
 else:
-    print('Sorry, no tickets available')
+    turtle.textinput('TicketBox', 'Sorry, no tickets available')
 
 # Consern: based on the task description there is no tickets availability for the adults of the age 16-65
