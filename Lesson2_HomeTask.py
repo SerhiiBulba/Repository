@@ -10,7 +10,7 @@
 
 a = 10
 b = 20
-if a < b:
+if a > b:
     print('A')
     print('is')
     print('True')
@@ -18,3 +18,4 @@ else:
     print('B')
     print('is')
     print('True')
+    print(123)
