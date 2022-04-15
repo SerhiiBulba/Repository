@@ -43,7 +43,7 @@ elif age.isalnum() == True:
     print('contains letter')
 # check if input is less or equal to zero0
 elif int(age) < 0:
-    print('age could not be less zero')
+    print('age could not be less than zero')
 elif int(age) == 0:
     print('age could not be equal to zero')
 
