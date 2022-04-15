@@ -35,12 +35,33 @@
 
 #TASK #2: Ввести з консолі строку зі слів (або скористайтеся константою). Напишіть код, який визначить кількість  слів, \
 # в цих даних
-my_str = input('Please, input the string: ')
-x = my_str.split(' ')
-print('', len(x))
+# Comments: For this story I did not implemented any validation rules \ 
+# initially I/m accepting assumption: string is alphabetical only accordingly to the task description
+
+# my_str = input('Please, input the string: ')
+# x = my_str.split(' ')
+# print('Number of words in the string is: ', len(x))
 
 # TASK #3: 3.	Існує ліст з різними даними, наприклад lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']. \
 #  Напишіть механізм, який сфлрмує новий list (наприклад lst2), який би містив всі числові змінні, які є в lst1. \ 
 # Майте на увазі, що данні в lst1 не є статичними можуть змінюватись від запуску до запуску. 
 
+# Approach 1 for the solution - the constrait of this approach -> the resulted lst2 contains "bool" variables
+lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum', None]
+lst2 = []
+for str_el in lst1:
+    if isinstance(str_el, int):
+        lst2.append(str_el)
+print(lst2)
 
+# Approach 2 for the solution: resulted lst2 doesn't contain "bool" variables
+# lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum', None]
+# lst2 = []
+# for str_el in lst1:
+#     if type(str_el) == bool:
+#         lst1.remove(str_el)
+#         break
+# for str_el in lst1:
+#     if isinstance(str_el, int):
+#         lst2.append(str_el)
+# print(lst2)
