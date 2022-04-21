@@ -4,6 +4,52 @@
 #  витратив час, однак поки що не виходить завдання 1
 #
 
+# TASK 1: Дана довільна строка. Напишіть код, який знайде в ній і віведе на екран кількість слів, \
+# які містять дві голосні літери підряд.
+# ACCEPTANCE CRITERIA:
+# GIVEN: - have inputs of any string via console
+#   and: - the string can include any characters 
+#  WHEN: - push the code
+#  THEN: - search the word where 2 vowels come one by one 
+#   and: - count the number of words
+
+#####  resolving:
+
+# Step 1: Provide initial inputs
+## 1.1 Input the string and validate it is not empty:
+while True:
+    my_str = input(f'Please, input the string: ')
+    if len(my_str) != 0:
+        print('The number of words with coupled vowel letters is: ')
+        break
+    else:
+        print('string should not be empty')
+
+## 1.2 Input the list of vowels:
+vowel = ['a', 'e', 'i', 'o', 'u']
+
+# Step 2: Processing the inputs
+## 2.1 Set the cycle for check out whether letters are vowels:
+for letter in vowel:
+
+## 2.2 Set the cycle replacing the vowel letters onto '1':
+    if letter in my_str:
+        my_str = my_str.replace(letter, '1')
+
+## 2.3 Create the interim list #1 from the string:
+my_lst = list(my_str.split(' '))
+
+## 2.4 Create the interim list #2 for storing the data processed:
+f_lst = []
+
+## 2.5 Set the cycle for cheking whether the element in the list contains '11' ('11' -> means the vowel letters are one by one):
+for word in my_lst:
+    if '11' in word:
+        f_lst.append(word)
+
+# Step 3: Print the result:
+print(len(f_lst))
+
 
 ### TASK 2: Є два довільних числа які відповідають за мінімальну і максимальну ціну. \ 
 # Є Dict з назвами магазинів і цінами: \ 
@@ -25,96 +71,42 @@ shops_dic =  {
         "rozetka": 38.003
     }
 
-# Step2: validate the inputs:
+# Step2: validate the inputs for min and max price:
 while True:
     try:
-       min_p = float(input(f'Please, input the min price: '))
+       min_p = float(input(f'Please, input the MIN price: '))
     except: 
-        print('input should be integer or float')
+        print('Error message 1: min price should be integer or float, try again')
     else:
-        break
-
+        if min_p > 0:
+            break
+        else:
+            print('Error message 2: MIN price should value > 0, try again')
+            continue
 while True:
     try:
-       max_p = float(input(f'Please, input the min price: '))
+        max_p = float(input(f'Please, input the MAX price: '))
     except: 
-        print('input should be integer or float')
+        print('Error message 3: MAX price should be integer or float, try again')
     else:
-        break
-
-# Step3: Chek the condition:
+        if max_p > 0:
+            break
+        else:
+            print('Error message 4: MAX price should value > 0, try again')
+            continue
+    finally:        
+        if max_p > min_p:
+            break
+        else:
+            print('Error message 5: MAX price should exceed the MIN price, try again')
+            continue
+    
+# Step3: Chek the condition and show results:
 print('Match results: ')
 for shop, price in shops_dic.items():
     if  min_p < price < max_p:
-            print(f'-->', shop)
-
-
-
-# TASK 1: Дана довільна строка. Напишіть код, який знайде в ній і віведе на екран кількість слів, \
-# які містять дві голосні літери підряд.
-# ACCEPTANCE CRITERIA:
-# GIVEN: - have inputs of any string via console
-#   and: - the string can include any characters 
-#  WHEN: - push the code
-#  THEN: - search the word where 2 vowels come one by one 
-#   and: - count the number of words
-
-# 1 input the string
-# # 2 validate the inputs
-# # 3 find 2 vowels one by one
-# # 4 check if it is included into the words
-# # 5 count the number of words
-
-# # resolving:
-
-
-
-# # 3 find 2 vowels one by one
-
-# ## Define function for cheking the vowels:
-# def checkVowels(string):  #use-defined function
-#    # check the string contains vowels
-#    for char in string:
-#       if char in 'aeiouAEIOU':
-#          return True
-#    return False
-
-# vowel = ['a', 'e', 'i', 'o', 'u']
-# my_str = input(f'Input the string: ')
-# #1
-# for i in my_str:
-#     if (checkVowels(my_str) == True):
-#         print(my_str.index(vowel))
+        print(f'-->', shop)
 
 
 
 
-    
-
-
-# split the string into the list:
-# my_lst = my_str.split()
-# print(my_lst)
-
-
-
-
-# lst2 = []
-
-# for i in my_lst:
-#     print(i)
-    
-# for n in i:
-#     if n in vowel:
-#         x = i.count(n)
-#         lst2.append(x)
-
-# print(lst2)
-
-
-
-# count letters:
-# count_letter = 0
-# for letter in my_str:
-#     if letter in vowel:
-#         count_letter += 1
