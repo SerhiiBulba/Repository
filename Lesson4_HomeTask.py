@@ -47,8 +47,7 @@ for word in my_lst:
         f_lst.append(word)
 
 # Step 3: Print the result:
-print('The number of words with coupled vowel letters is: ')
-print(len(f_lst))
+print('The number of words with coupled vowel letters is: ', len(f_lst))
 
 
 ### TASK 2: Є два довільних числа які відповідають за мінімальну і максимальну ціну. \ 
