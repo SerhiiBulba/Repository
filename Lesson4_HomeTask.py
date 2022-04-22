@@ -32,9 +32,9 @@ vowel = ['a', 'e', 'i', 'o', 'u']
 ## 2.1 Set the cycle for check out whether letters are vowels:
 for letter in vowel:
 
-## 2.2 Set the cycle replacing the vowel letters onto '1':
+## 2.2 Set the cycle replacing the vowel letters onto '*':
     if letter in my_str:
-        my_str = my_str.replace(letter, '1')
+        my_str = my_str.replace(letter, '*')
 
 ## 2.3 Create the interim list #1 from the string:
 my_lst = list(my_str.split(' '))
@@ -42,9 +42,9 @@ my_lst = list(my_str.split(' '))
 ## 2.4 Create the interim list #2 for storing the data processed:
 f_lst = []
 
-## 2.5 Set the cycle for cheking whether the element in the list contains '11' ('11' -> means the vowel letters are one by one):
+## 2.5 Set the cycle for cheking whether the element in the list contains '**' ('**' -> means the vowel letters are one by one):
 for word in my_lst:
-    if '11' in word:
+    if '**' in word:
         f_lst.append(word)
 
 # Step 3: Print the result:
