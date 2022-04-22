@@ -20,7 +20,6 @@
 while True:
     my_str = input(f'Please, input the string: ')
     if len(my_str) != 0:
-        print('The number of words with coupled vowel letters is: ')
         break
     else:
         print('string should not be empty')
@@ -48,6 +47,7 @@ for word in my_lst:
         f_lst.append(word)
 
 # Step 3: Print the result:
+print('The number of words with coupled vowel letters is: ')
 print(len(f_lst))
 
 
