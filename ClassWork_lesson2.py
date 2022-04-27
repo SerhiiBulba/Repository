@@ -5,7 +5,7 @@
 
 #! To keep in mind - any variable represents an object of a particulat class (for instance, string var is an object of class 'string')
 
-# Operators priorities
+# Operators priorities:
 # ()
 # **
 # *  /   //   %
@@ -13,8 +13,8 @@
 # >   <   >=  <= 
 # not
 # and
-# or
-# =
+# or 
+# =  !=
 
 # # Sample 1
 # a = 0
