@@ -1,4 +1,4 @@
-## Task description:
+## Task description :
 #     Hапишіть программу "Касир в кінотеатрі", яка буде виконувати наступне: Попросіть користувача ввести свсвій вік.
 # - якщо користувачу менше 7 - вивести "Тобі ж <>! Де твої батьки?"
 # - якщо користувачу менше 16 - вивести "Тобі лише <>, а це е фільм для дорослих!"
@@ -25,6 +25,7 @@
 """_Section 1: Input the list (global data) with values of awesome age:_
 """
 list = [11, 22, 33, 44, 55, 66, 77, 88, 99]
+# Check the input using the cycle
 while True:
     try:
         age = int(input(f'Please, input the age:'))
