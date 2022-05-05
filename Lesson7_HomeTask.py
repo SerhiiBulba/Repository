@@ -22,13 +22,50 @@
 
 ### PROGRAM CODE:
 
-## Section 1: providing user inputs
+## Section 1: user inputs (global) and validate them:
+while True:
+    try:
+        age = int(input(f'Please, input the age:'))
+    except:
+        print('error 1')
+    else:
+        if age > 0:
+            break
+        else:
+            print(f'error 2')
+         
+print(type(age))
 
-print('Please, input the age:', input(int))
+## Section 2: check if the age contains the matched digits (11, 22 ...)
+def check_match(age):
+    if len(str(age)) == 2:
+        if str(age)[0] == str(age)[1]:
+            print('О, вам {}! Який цікавий вік!'.format(age))
+    
+check_match(age)
 
 
-## Section 2: validate the inputs
+
+
+# a = '1'
+# b = '2'
+# c = '3'
+
+# print("Character at index {} in the string '{}' is {}.".format(a, b, c))
+
+
+## function "format" for the string var
+# my_str3 = 'How {} You1 {}'
+# print(my_str3.format('are','?'))
+
+
+                
+
+
+
+
+
 
 ## Section 3: dictionaries for response-template (global)
 
-## Section 4: check if the age contains the matched digits (11, 22 ...)
+## Section 4: 
