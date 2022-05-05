@@ -22,51 +22,59 @@
 
 ### PROGRAM CODE:
 
-## Section 1: Input the list with values of awesome age:
+"""_Section 1: Input the list (global data) with values of awesome age:_
+"""
 list = [11, 22, 33, 44, 55, 66, 77, 88, 99]
-
 while True:
     try:
         age = int(input(f'Please, input the age:'))
     except:
-        print('error 1')
+        print('Should be integer only, not float, not empty')
     else:
         if age > 0:
             break
         else:
-            print(f'error 2')
+            print(f'should be > 0')
 
-## Section 2: Input the text appends:
-def year_append(age):
-    lst1 = ['1']                           # для додавання: "рік"
-    lst2 = ['2', '3', '4']                 # для додавання: "роки"
-    lst3 = ['0', '5', '6', '7', '8', '9']  # для додавання: "років"
-    age_str = str(age)
-    if age_str[-1] in lst1:                # додавання "рік", якщо age закінчується на '1'
-        print('рік')
-    if age_str[-1] in lst2:                # додавання "роки", якщо age закінчується на '2', '3', '4'
-        print('роки')
-    if age_str[-1] in lst3:                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
-        print('років')
+    """_Section 2: Input the text appends (global data):_
+    """
+lst1 = ['1']                           # для додавання: "рік"
+lst2 = ['2', '3', '4']                 # для додавання: "роки"
+lst3 = ['0', '5', '6', '7', '8', '9', '12', '13']  # для додавання: "років"
+age_str = str(age)
+if age_str[-1] in lst1:                # додавання "рік", якщо age закінчується на '1'
+    text = 'рік'
+if age_str[-1] in lst2:                # додавання "роки", якщо age закінчується на '2', '3', '4'
+    text = 'роки'
+if age_str[-1] in lst3:                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
+    text = 'років'
 
-## Section 2: Function: check if the age contains the matched digits (11, 22 ...)
 def check_match(age):
+    """_Section 3: FUNCTION "check if the age contains the matched digits (11, 22 ...)_
+
+    Args:
+        age (_str_): _age of the Customer_
+    """    
     if age in list:
-        print('О, вам {} {}! Який цікавий вік!'.format(age, year_append(age)))
+        print('О, вам {} {}! Який цікавий вік!'.format(age, text))
 
     
-## Section 3: Function "Return response":
 def return_response(age):
+    """_Section 4: FUNCTION "Return response":_
+
+    Args:
+        age (_str_): _age of the Customer_
+    """    
     if check_match(age) is True:
         check_match(age)
     elif age < 7:
-        print('Тобі ж {}! Де твої батьки?'.format(age))
+        print('Тобі ж {} {}! Де твої батьки?'.format(age, text))
     elif (age >= 7) and (age < 16) and (age not in list):
-        print('Тобі лише {}, а це е фільм для дорослих!'.format(age))
+        print('Тобі лише {} {}, а це е фільм для дорослих!'.format(age, text))
     elif (age >= 16) and (age < 65) and (age not in list):  
-        print('Незважаючи на те, що вам {}, білетів всеодно нема!'.format(age))
+        print('Незважаючи на те, що вам {} {}, білетів всеодно нема!'.format(age, text))
     elif (age >= 65) and (age not in list):  
-        print('Вам {} Покажіть пенсійне посвідчення!'.format(age))
+        print('Вам {} {}. Покажіть пенсійне посвідчення!'.format(age, text))
     
 return_response(age)
 
