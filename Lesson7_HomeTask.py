@@ -36,20 +36,22 @@ while True:
         else:
             print(f'should be > 0')
 
-    """_Section 2: Input the text appends (global data):_
-    """
+"""_Section 2: Input the text appends (global data):_
+"""
 lst1 = ['1']                           # для додавання: "рік"
 lst2 = ['2', '3', '4']                 # для додавання: "роки"
 lst3 = ['0', '5', '6', '7', '8', '9']  # для додавання: "років"
+lst4 = ['11', '12', '13', '14', '15', '16', '17', '18', '19']   # для додавання: "років"
 age_str = str(age)
-if age_str[-1] in lst1:                # додавання "рік", якщо age закінчується на '1'
-    text = 'рік'
-elif age_str[-1] in lst2:                # додавання "роки", якщо age закінчується на '2', '3', '4'
-    text = 'роки'
-elif (age_str[-1] in lst3) or (age_str[-2] in lst4):                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
+if age_str in lst4:
     text = 'років'
-# if age_str[-2] in lst4:                # додавання "років", якщо age закінчується на '11', '12', '13', '14', '15', '16', '17', '18', '19'
-#     text = 'років'
+else:
+    if (age_str[-1] in lst1):                # додавання "рік", якщо age закінчується на '1'
+        text = 'рік'
+    elif (age_str[-1] in lst2):                # додавання "роки", якщо age закінчується на '2', '3', '4'
+        text = 'роки'
+    elif (age_str[-1] in lst3):                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
+        text = 'років'
 
 def check_match(age):
     """_Section 3: FUNCTION "check if the age contains the matched digits (11, 22 ...)_
