@@ -20,7 +20,7 @@
 # return the response including templates (described in the task description)
 # includes the docstring documantation for each function
 
-### PROGRAM CODE:
+### PROGRAM CODE : ###
 
 """_Section 1: Input the list (global data) with values of awesome age:_
 """
