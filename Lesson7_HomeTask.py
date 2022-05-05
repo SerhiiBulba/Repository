@@ -22,7 +22,9 @@
 
 ### PROGRAM CODE:
 
-## Section 1: user inputs (global) and validate them:
+## Section 1: Input the list with values of awesome age:
+list = [11, 22, 33, 44, 55, 66, 77, 88, 99]
+
 while True:
     try:
         age = int(input(f'Please, input the age:'))
@@ -33,30 +35,53 @@ while True:
             break
         else:
             print(f'error 2')
-         
-print(type(age))
 
-## Section 2: check if the age contains the matched digits (11, 22 ...)
+## Section 2: Input the text appends:
+def year_append(age):
+    lst1 = ['1']                           # для додавання: "рік"
+    lst2 = ['2', '3', '4']                 # для додавання: "роки"
+    lst3 = ['0', '5', '6', '7', '8', '9']  # для додавання: "років"
+    age_str = str(age)
+    if age_str[-1] in lst1:                # додавання "рік", якщо age закінчується на '1'
+        print('рік')
+    if age_str[-1] in lst2:                # додавання "роки", якщо age закінчується на '2', '3', '4'
+        print('роки')
+    if age_str[-1] in lst3:                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
+        print('років')
+
+## Section 2: Function: check if the age contains the matched digits (11, 22 ...)
 def check_match(age):
-    if len(str(age)) == 2:
-        if str(age)[0] == str(age)[1]:
-            print('О, вам {}! Який цікавий вік!'.format(age))
+    if age in list:
+        print('О, вам {} {}! Який цікавий вік!'.format(age, year_append(age)))
+
     
-check_match(age)
+## Section 3: Function "Return response":
+def return_response(age):
+    if check_match(age) is True:
+        check_match(age)
+    elif age < 7:
+        print('Тобі ж {}! Де твої батьки?'.format(age))
+    elif (age >= 7) and (age < 16) and (age not in list):
+        print('Тобі лише {}, а це е фільм для дорослих!'.format(age))
+    elif (age >= 16) and (age < 65) and (age not in list):  
+        print('Незважаючи на те, що вам {}, білетів всеодно нема!'.format(age))
+    elif (age >= 65) and (age not in list):  
+        print('Вам {} Покажіть пенсійне посвідчення!'.format(age))
+    
+return_response(age)
 
 
 
 
-# a = '1'
-# b = '2'
-# c = '3'
-
-# print("Character at index {} in the string '{}' is {}.".format(a, b, c))
 
 
-## function "format" for the string var
-# my_str3 = 'How {} You1 {}'
-# print(my_str3.format('are','?'))
+
+
+
+
+
+
+
 
 
                 
@@ -65,7 +90,3 @@ check_match(age)
 
 
 
-
-## Section 3: dictionaries for response-template (global)
-
-## Section 4: 
