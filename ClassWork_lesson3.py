@@ -173,8 +173,8 @@ else:
 print('next code')
 
 # Sample: 5 when using 'try' + 'except' + 'else' + 'finally'
-'finally' is used for the case when we need an action regardless the error occured or not
-'finally' is used for instance when need to close the connection even in case, when error occured
+# 'finally' is used for the case when we need an action regardless the error occured or not
+# 'finally' is used for instance when need to close the connection even in case, when error occured
 try:
     age = 10 / int(input('Please, input the age: '))
 except ValueError as e:
