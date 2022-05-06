@@ -22,53 +22,69 @@
 
 ### PROGRAM CODE : ###
 
-"""_Section 1: Input the list (global data) with values of awesome age:_
+"""Section 1: Input the list (global data) with values of awesome age:
 """
-list = [11, 22, 33, 44, 55, 66, 77, 88, 99]
-# Check the input using the cycle
-while True:
-    try:
-        age = int(input(f'Please, input the age:'))
-    except:
-        print('Should be integer only, not float, not empty')
-    else:
-        if age > 0:
-            break
-        else:
-            print(f'should be > 0')
 
-"""_Section 2: Input the text appends (global data):_
+list = [11, 22, 33, 44, 55, 66, 77, 88, 99]
+
+def validate():
+    """Section 2: Check the input using the cycle
+
+    Returns:
+        age: returns the int value of age inputted by User 
+    """
+    while True:
+        try:
+            age = input(f'Please, input the age:')
+            age_int = int(age)
+        except:
+            print('Should be integer only, not float, not empty')
+        else:
+            if age_int > 0:
+                break
+            else:
+                print(f'should be > 0')
+    return age
+
+age = int(validate())
+
+"""Section 3: Input the text appends (global data):
 """
-lst1 = ['1']                           # для додавання: "рік"
-lst2 = ['2', '3', '4']                 # для додавання: "роки"
-lst3 = ['0', '5', '6', '7', '8', '9']  # для додавання: "років"
-lst4 = ['11', '12', '13', '14', '15', '16', '17', '18', '19']   # для додавання: "років"
-age_str = str(age)
-if age_str in lst4:
-    text = 'років'
-else:
-    if (age_str[-1] in lst1):                # додавання "рік", якщо age закінчується на '1'
-        text = 'рік'
-    elif (age_str[-1] in lst2):                # додавання "роки", якщо age закінчується на '2', '3', '4'
-        text = 'роки'
-    elif (age_str[-1] in lst3):                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
+def text_append(age):
+    lst1 = ['1']                           # для додавання: "рік"
+    lst2 = ['2', '3', '4']                 # для додавання: "роки"
+    lst3 = ['0', '5', '6', '7', '8', '9']  # для додавання: "років"
+    lst4 = ['11', '12', '13', '14', '15', '16', '17', '18', '19']   # для додавання: "років"
+    age_str = str(age)
+    if age_str in lst4:
         text = 'років'
+        return text
+    else:
+        if (age_str[-1] in lst1):                # додавання "рік", якщо age закінчується на '1'
+            text = 'рік'
+            return text
+        elif (age_str[-1] in lst2):                # додавання "роки", якщо age закінчується на '2', '3', '4'
+            text = 'роки'
+            return text
+        elif (age_str[-1] in lst3):                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
+            text = 'років'
+            return text
+
+text = text_append(age)
 
 def check_match(age):
-    """_Section 3: FUNCTION "check if the age contains the matched digits (11, 22 ...)_
-
+    """Section 4: FUNCTION "check if the age contains the matched digits (11, 22 ...)
     Args:
-        age (_str_): _age of the Customer_
+        age (str): age of the Customer
     """    
     if age in list:
         print('О, вам {} {}! Який цікавий вік!'.format(age, text))
 
     
 def return_response(age):
-    """_Section 4: FUNCTION "Return response":_
-
+    """Section 5: FUNCTION "Return response":
     Args:
-        age (_str_): _age of the Customer_
+        age (str): age of the Customer
     """    
     if check_match(age) is True:
         check_match(age)
