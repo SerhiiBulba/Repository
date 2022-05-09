@@ -1,10 +1,12 @@
-# ## !!! Variable which is defined in the function exists only inside this function and no outside
-# a = 100
+print(__name__)
 
-# def foo(x):
-#     print(x)
+## !!! Variable which is defined in the function exists only inside this function and no outside
+a = 100
 
-#     return
+def foo(x):
+    print(x)
+
+    return
 
 # res = foo(a)
 
@@ -214,27 +216,29 @@
 
 # help(fun)
 
-def text_append(age):
-    lst1 = ['1']                           # для додавання: "рік"
-    lst2 = ['2', '3', '4']                 # для додавання: "роки"
-    lst3 = ['0', '5', '6', '7', '8', '9']  # для додавання: "років"
-    lst4 = ['11', '12', '13', '14', '15', '16', '17', '18', '19']   # для додавання: "років"
-    age_str = str(age)
-    if age_str in lst4:
-        text = 'років'
-        return text
-    else:
-        if (age_str[-1] in lst1):                # додавання "рік", якщо age закінчується на '1'
-            text = 'рік'
-            return text
-        elif (age_str[-1] in lst2):                # додавання "роки", якщо age закінчується на '2', '3', '4'
-            text = 'роки'
-            return text
-        elif (age_str[-1] in lst3):                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
-            text = 'років'
-            return text
+# def text_append(age):
+#     lst1 = ['1']                           # для додавання: "рік"
+#     lst2 = ['2', '3', '4']                 # для додавання: "роки"
+#     lst3 = ['0', '5', '6', '7', '8', '9']  # для додавання: "років"
+#     lst4 = ['11', '12', '13', '14', '15', '16', '17', '18', '19']   # для додавання: "років"
+#     age_str = str(age)
+#     if age_str in lst4:
+#         text = 'років'
+#         return text
+#     else:
+#         if (age_str[-1] in lst1):                # додавання "рік", якщо age закінчується на '1'
+#             text = 'рік'
+#             return text
+#         elif (age_str[-1] in lst2):                # додавання "роки", якщо age закінчується на '2', '3', '4'
+#             text = 'роки'
+#             return text
+#         elif (age_str[-1] in lst3):                # додавання "років", якщо age закінчується на '0', '5', '6', '7', '8', '9'
+#             text = 'років'
+#             return text
 
-text = text_append(age)
+# text = text_append(age)
+
+
 
 
 
