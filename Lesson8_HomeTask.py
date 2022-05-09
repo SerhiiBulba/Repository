@@ -7,6 +7,7 @@ def main():
     """
     for i in range(1, 4):
         print(f'Try {i}')
+
         user_choice = get_user_choice()
 
         computer_choice = get_computer_choice()
