@@ -3,6 +3,10 @@
 from random import choice
 
 def win_rules():
+    """Function returns the win_rules
+    Returns:
+        WIN_RULES (dict): define the list of cases, where User is a winner
+    """    
     WIN_RULES = {
     'stone': 'scissors',
     'paper': 'stone',
@@ -16,11 +20,13 @@ def win_rules():
     'spock': 'stone'
     }
     return WIN_RULES
-
 WIN_RULES = win_rules()
 
-# get data from user
 def get_user_choice():
+    """GET DATA FROM USER
+    Returns:
+       user_choice (str): User's an input only among: stone, paper, scissors, lizard, spock
+    """    
     while True:
         user_choice = input('Enter your choice (stone, paper, scissors, lizard, spock): ')
         if user_choice not in WIN_RULES.keys():
@@ -29,17 +35,23 @@ def get_user_choice():
         else:
             return user_choice
 
-
-# get data from computer
 def get_computer_choice():
-
+    """GET DATA FROM COMPUTER
+    Returns:
+       computer_choice (str): random value only among: stone, paper, scissors, lizard, spock
+    """
     computer_choice = choice(list(WIN_RULES.keys()))
     return computer_choice
 
 
-# define winner
 def get_winner(user_choice, computer_choice):
-
+    """DEFINE THE WINNER
+    Args:
+        user_choice (str): User's input only among: stone, paper, scissors, lizard, spock
+        computer_choice (str): Random value among: stone, paper, scissors, lizard, spock
+    Returns:
+        msg (str): returns the result of Game
+    """
     if user_choice == computer_choice:
         msg = 'Draw'
     elif WIN_RULES[user_choice] == computer_choice:
@@ -50,26 +62,17 @@ def get_winner(user_choice, computer_choice):
     return msg
 
 
-# make message
 def make_message(user_choice, computer_choice, winner):
-
+    """COMPILE THE MESSAGE
+    Args:
+        user_choice (str): User's input only among: stone, paper, scissors, lizard, spock
+        computer_choice (str): Random value among: stone, paper, scissors, lizard, spock
+        winner (str): returns the result of Game
+    Returns:
+        msg (str): compiled message for returning the Game result
+    """
     msg = f'User choice is \'{user_choice}\', PC choice is \'{computer_choice}\'. Winner is \'{winner}\''
     return msg
 
 
-def main():
 
-    for i in range(1, 4):
-        print(f'Try {i}')
-        user_choice = get_user_choice()
-
-        computer_choice = get_computer_choice()
-
-        winner = get_winner(user_choice, computer_choice)
-
-        msg = make_message(user_choice, computer_choice, winner)
-
-        print(msg)
-
-
-main()
