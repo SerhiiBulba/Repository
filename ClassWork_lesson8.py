@@ -1,18 +1,18 @@
-# ### Feature for definition the messages to the AGE / Код для визначення тексту під кількість років {рік, роки, років}
-# age = int(input(f'Please, input the age: '))
-# div_reminder = age % 10
+### Feature for definition the messages to the AGE / Код для визначення тексту під кількість років {рік, роки, років}
+age = int(input(f'Please, input the age: '))
+div_reminder = age % 10
 
-# if int(str(age)[-2:]) in (11, 12, 13, 14) or 5 <= div_reminder or div_reminder == 0:
-#     msg = 'років'
-# elif div_reminder == 1:
-#     msg = 'рік'
-# elif 2 <= div_reminder <= 4:
-#     msg = 'роки'
+if int(str(age)[-2:]) in (11, 12, 13, 14) or 5 <= div_reminder or div_reminder == 0:
+    msg = 'років'
+elif div_reminder == 1:
+    msg = 'рік'
+elif 2 <= div_reminder <= 4:
+    msg = 'роки'
 
-# print(age, msg)
+print(age, msg)
 
-### Case for the GAME: 'Stone, paper, scissors'
-## acceptance criteria:
+## Case for the GAME: 'Stone, paper, scissors'
+# acceptance criteria:
 # objects: [paper, stone, scissors]
 # PC can choice  any object - logic of choise is blackbox, could be random
 # User can select any object - logic of chois is up to User, could be random
@@ -79,21 +79,21 @@ def main():
 main()
 
 
-# ### RECURSION. Factorial
-# ## Recursion - when function calls itself directly or inderectly
-# counter = 0
-# def recur_factor(n):
-#     global counter
-#     counter += 1
-#     if n <= 1:
-#          return 1
-#     res = n * recur_factor(n - 1)
+### RECURSION. Factorial
+## Recursion - when function calls itself directly or inderectly
+counter = 0
+def recur_factor(n):
+    global counter
+    counter += 1
+    if n <= 1:
+         return 1
+    res = n * recur_factor(n - 1)
     
-#     return res
+    return res
 
-# res = recur_factor(5)
-# print(res)
-# print(counter)
+res = recur_factor(5)
+print(res)
+print(counter)
 
 counter = 0     # to start counting from 0 we need to place the global variable "counter" right before each function
 def rec_fact(n):
@@ -108,38 +108,38 @@ def rec_fact(n):
 print(rec_fact(5))
 print(counter)
 
-# ### FIBONACCI function recursion:
-# ## Example:
-# counter = 0   # make initial set for counter variable
-# def fib(n):
-#     global counter   # define the global variable
-#     counter += 1     # define the counter - count the number of function run
+### FIBONACCI function recursion:
+## Example:
+counter = 0   # make initial set for counter variable
+def fib(n):
+    global counter   # define the global variable
+    counter += 1     # define the counter - count the number of function run
 
-#     if n in (1, 2):
-#         return 1
+    if n in (1, 2):
+        return 1
         
-#     fib_rec = fib(n-1) + fib(n-2)
-#     return fib_rec
+    fib_rec = fib(n-1) + fib(n-2)
+    return fib_rec
 
-# print(fib(10))
-# print(counter)
+print(fib(10))
+print(counter)
 
-# ### FIBONACCI using the cycle, not recursion
-# counter = 0
-# def fib_cycle(n):
+### FIBONACCI using the cycle, not recursion
+counter = 0
+def fib_cycle(n):
     
-#     if n in (1, 2):
-#         return 1
-#     global counter
-#     counter += 1
-#     fib1 = fib2 = 1
-#     for i in range(n-2):
-#         fib1, fib2 = fib2, fib1 + fib2
+    if n in (1, 2):
+        return 1
+    global counter
+    counter += 1
+    fib1 = fib2 = 1
+    for i in range(n-2):
+        fib1, fib2 = fib2, fib1 + fib2
 
-#     return fib2
+    return fib2
 
-# print(fib_cycle(10))
-# print(counter)
+print(fib_cycle(10))
+print(counter)
 
 ### IMPORT: rules
 
