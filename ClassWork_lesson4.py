@@ -132,24 +132,24 @@ my_set.remove('a')
 print(my_set)
 
 
-# ## How to ask if the particular element exists in the dictionary, set?
-# print('a' in my_dict.values())  # receiving the True
-# print('f' in my_set)            # receiving the True
-# print('a' in my_set)            # receiving the False  - because, the 'a' was removed during the code in row 131
+## How to ask if the particular element exists in the dictionary, set?
+print('a' in my_dict.values())  # receiving the True
+print('f' in my_set)            # receiving the True
+print('a' in my_set)            # receiving the False  - because, the 'a' was removed during the code in row 131
 
-# ### FROZEN SET data type
-# # this data type is similar to Set. But for creating the set need the function
-# frozen_set = frozenset([1, 2, 3])
-# print(frozen_set)
+### FROZEN SET data type
+# this data type is similar to Set. But for creating the set need the function
+frozen_set = frozenset([1, 2, 3])
+print(frozen_set)
 
-### How to get data from dictionary - use method  'GET'
-## dictionary_name_get('a', 'b'), where 'a' - key, 'b' - default value returned if the key not found
-# my_dict = {
-#     True: 'a',
-#     1000.1: 'b',
-#     'string': 'c'
-#         }
-# print(my_dict.get(True, 'default data'))
+## How to get data from dictionary - use method  'GET'
+# dictionary_name_get('a', 'b'), where 'a' - key, 'b' - default value returned if the key not found
+my_dict = {
+    True: 'a',
+    1000.1: 'b',
+    'string': 'c'
+        }
+print(my_dict.get(True, 'default data'))
 
 ### !!! Do not use <if 'a' or 'b' in lst>, but use <if ('a' in lst) or ('b' in lst)>
 ## for the case <if 'a' or 'b' in lst> the programm processes only the 1st element, which returns True.
@@ -160,35 +160,35 @@ print(my_set)
 ##  True case is when: 1) at least any value exists except 0 or 0.00; 2) True
 
 ### TERNARY operator if-else
-# ## Python Ternary operator is used to select one of the two values based on a condition. \ 
-# # It is a miniature of if-else statement that assigns one of the two values to a variable.
-# ## for instance: return 'Hello' if condition is True, and return 'Buy' if condition is False
-# condition = True
-# res = 'Hello' if condition else 'By'
-# print(res)
+## Python Ternary operator is used to select one of the two values based on a condition. \ 
+# It is a miniature of if-else statement that assigns one of the two values to a variable.
+## for instance: return 'Hello' if condition is True, and return 'Buy' if condition is False
+condition = True
+res = 'Hello' if condition else 'By'
+print(res)
 
-# ### IF need to create a list with a range from 0 to 10, we can use the operator "for"
-# ## Approach 1: using standart cycle 'for'
-# lst = []
-# for i in range(11):
-#     lst.append(i)
-# print(lst)
+### IF need to create a list with a range from 0 to 10, we can use the operator "for"
+## Approach 1: using standart cycle 'for'
+lst = []
+for i in range(11):
+    lst.append(i)
+print(lst)
 
-# ## Approach 2: usin 'comprehension'
-# lst = [i for i in range(11)]
-# print(lst)
+## Approach 2: usin 'comprehension'
+lst = [i for i in range(11)]
+print(lst)
 
-# ### If need to derive a list with a range of squared numbers (0^2, 1^2, 2^2 ..., 10^2)
-# lst = [i ** 2 for i in range(11)]
-# print(lst)
+### If need to derive a list with a range of squared numbers (0^2, 1^2, 2^2 ..., 10^2)
+lst = [i ** 2 for i in range(11)]
+print(lst)
 
-# ### If need to derive a list of strings including the squared numbers in range 0...10 ('0^2', '1^2', '2^2' ..., '10^2')
-# lst = [str(i ** 2) for i in range(11)]
-# print(lst)
+### If need to derive a list of strings including the squared numbers in range 0...10 ('0^2', '1^2', '2^2' ..., '10^2')
+lst = [str(i ** 2) for i in range(11)]
+print(lst)
 
-# ### If need to convert the string '1234567' into a list of strings including the squared numbers in range 0...10 ('0^2', '1^2', '2^2' ..., '10^2')
-# lst = [str(int(i) ** 2) for i in '1234567']
-# print(lst)
+### If need to convert the string '1234567' into a list of strings including the squared numbers in range 0...10 ('0^2', '1^2', '2^2' ..., '10^2')
+lst = [str(int(i) ** 2) for i in '1234567']
+print(lst)
 
 ### create a list from the elements of range 0...10 with the next condition: for pair element need to square, for odd elements - need to cube.
 ## Approach 1: use 'for'
