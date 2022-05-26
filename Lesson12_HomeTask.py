@@ -3,9 +3,9 @@
 
 # ACCEPTANCE CRITERIA:
 # 1 --> class 'Vehicle'
-# 2 --> subclasses 'Car', 'Plane', 'Sheep' from the class 'Vehicle'
+# 2 --> subclasses 'Car', 'Plane', 'Ship' from the class 'Vehicle'
 # 3 --> attributes are created for each object, Atrributes could be Any.
-# 4 --> objects for each subclass('Car', 'Plane', 'Sheep')
+# 4 --> objects for each subclass('Car', 'Plane', 'Ship')
 
 # Code:
 
