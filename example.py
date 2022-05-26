@@ -121,3 +121,16 @@ def return_response(age):
         print('Вам {} {}. Покажіть пенсійне посвідчення!'.format(age, text))
     
 return_response(age)
+
+
+def Car_Info(model, car_speed, car_weight):
+        """Returns the infor regarding Vehicle
+
+        Args:
+            car_speed (dict): variants of speed for different types of vehicles
+            car_weight (list): weight range
+        """        
+    car_speed = 50
+    car_weight = '1250 - 2100 kg'
+    model = input(f'please, input the name: ')
+    return(f'Vehicle model is {model}. Speed is {car_speed} km/h.  Weight is {car_weight}.')
