@@ -29,7 +29,7 @@
 ## CLASSES and OBJECTS
 
 ## {!!!} As usual classes are creaded for separating the functionality:
-for instance: we create classes 'Customer', 'Goods', 'DateTime' for storing transactional info within the class 'Transaction'
+# for instance: we create classes 'Customer', 'Goods', 'DateTime' for storing transactional info within the class 'Transaction'
 # Class 'Transaction' is multiply inherited from the classes 'Customer', 'Goods' and 'DateTime'
 # Difference between 'class' and 'object':
 # _-> 'class'   is the scheme for object projecting / creating. Class defines the object attributes (properties) and methods (behaviour)
