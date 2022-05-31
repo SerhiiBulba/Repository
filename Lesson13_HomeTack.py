@@ -42,12 +42,12 @@ class Point:
         self.y = y_coord
 
 # simple unit test for the point class:
-point1 = Point(1, '1')
-print(point1.x)
-print(point1.y)
+# point1 = Point(1, '1')
+# print(point1.x)
+# print(point1.y)
 
-# Task 2:  Створіть класс Triangle (трикутник), який задається трьома точками (обʼєкти классу Point). \ 
-# Реалізуйте перевірку даних, що пишуться в точки аналогічно до класу Line. Визначет атрибут, \ 
+# Task 2:  Створіть класс Triangle (трикутник), який задається трьома точками (обʼєкти классу Point).  
+# Реалізуйте перевірку даних, що пишуться в точки аналогічно до класу Line. Визначет атрибут,  
 # що містить площу трикутника (за допомогою property). Для обчислень можна використати формулу Герона
 
 
@@ -102,23 +102,35 @@ class Triangle:
             raise TypeError
         self._corner3 = new_corner3
 
-    # -> define property for Squeare of Triangle:
+    # # -> define property for Squeare of Triangle:
     @property
-    def square(self):
-        k1 = (self.begin.x - self.end.x) ** 2
-        k2 = (self.begin.y - self.end.y) ** 2
-        res = (k1 + k2) ** 0.5
-        return res
+    def square_abc(self):
+        lab_x = (self._corner1.x - self._corner2.x) ** 2
+        lab_y = (self._corner1.y - self._corner2.y) ** 2
+        length_ab = (lab_x + lab_y) ** 0.5
+
+        lac_x = (self._corner1.x - self._corner3.x) ** 2
+        lac_y = (self._corner1.y - self._corner3.y) ** 2
+        length_ac = (lac_x + lac_y) ** 0.5        
+
+        lbc_x = (self._corner2.x - self._corner3.x) ** 2
+        lbc_y = (self._corner2.y - self._corner3.y) ** 2
+        length_bc = (lbc_x + lbc_y) ** 0.5        
+        
+        p = (length_ab + length_ac + length_bc) / 2
+
+        square = (p * (p - length_ab) * (p - length_ac) * (p - length_bc)) ** 0.5
+        
+        return square
 
 
 
 
-point1 = Point(1, 2)
-point2 = Point(10, 30)
-line_obj = Line(point1, point2)
+point1 = Point(1, 10)
+point2 = Point(10, 25)
+point3 = Point(7, 36)
+triangle = Triangle(point1, point2, point3)
 
 # --> rewriting the values for point1 and point2
-line_obj._begin  = Point(0, '1')
-line_obj._end  = Point(100, 150)
 
-print(line_obj.get_distance)   
+print(triangle.square_abc)   
