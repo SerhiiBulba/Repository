@@ -1,3 +1,4 @@
+##
 ## Дякую, що зачекали :)
 
 ## Task 1: Доопрацюйте класс Point так, щоб в атрибути х та у обʼєктів цього класу можна було записати тільки числа. 
@@ -6,6 +7,7 @@
 ## For the validation rule I used 'if-else' instead 'if-raise', -> this is for returning the reason of the error happened
 
 ##-----Class Point-----
+
 class Point:
     """Point class defines the cooridnates of a single point
 
