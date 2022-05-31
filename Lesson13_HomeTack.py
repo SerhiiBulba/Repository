@@ -131,6 +131,5 @@ point2 = Point(10, 25)
 point3 = Point(7, 36)
 triangle = Triangle(point1, point2, point3)
 
-# --> rewriting the values for point1 and point2
 
 print(triangle.square_abc)   
