@@ -56,15 +56,26 @@ class Point:
 
 
 class Triangle:
+    """Defines the corners of the Triangle ABC and calculates its square using coordinates over the points A, B and C
+
+    Raises:
+        TypeError: ErrorType for corner1 (point A) (only int/float are allowed)
+        TypeError: ErrorType for corner2 (point B) (only int/float are allowed)
+        TypeError: ErrorType for corner3 (point C) (only int/float are allowed)
+
+    Returns:
+        float: square of the Triangle
+    """    
+    # set the attributes for the corners of the Triangle
     _corner1 = None
     _corner2 = None
     _corner3 = None
     
     # initiate the corner points of the Triangle:
     def __init__(self, apex1, apex2, apex3):
-        self._corner1 = apex1
-        self._corner2 = apex2
-        self._corner3 = apex3
+        self.corner1 = apex1
+        self.corner2 = apex2
+        self.corner3 = apex3
 
     # define 'read' property for corner1:
     @property
@@ -102,34 +113,41 @@ class Triangle:
             raise TypeError
         self._corner3 = new_corner3
 
-    # # -> define property for Squeare of Triangle:
+    # -> define property for Squeare of Triangle ABC:
     @property
     def square_abc(self):
+
+        # calculate the legth of the side AB:
         lab_x = (self._corner1.x - self._corner2.x) ** 2
         lab_y = (self._corner1.y - self._corner2.y) ** 2
         length_ab = (lab_x + lab_y) ** 0.5
 
+        # calculate the legth of the side AC:
         lac_x = (self._corner1.x - self._corner3.x) ** 2
         lac_y = (self._corner1.y - self._corner3.y) ** 2
         length_ac = (lac_x + lac_y) ** 0.5        
 
+        # calculate the legth of the side BC:
         lbc_x = (self._corner2.x - self._corner3.x) ** 2
         lbc_y = (self._corner2.y - self._corner3.y) ** 2
         length_bc = (lbc_x + lbc_y) ** 0.5        
         
+        # calculate the half of Perimeter:
         p = (length_ab + length_ac + length_bc) / 2
 
-        square = (p * (p - length_ab) * (p - length_ac) * (p - length_bc)) ** 0.5
+        # calculate the square of the Triangle ABC:
+        square_abc = (p * (p - length_ab) * (p - length_ac) * (p - length_bc)) ** 0.5
         
-        return square
+        return square_abc
 
-
-
-
+# simple unit tests:
 point1 = Point(1, 10)
 point2 = Point(10, 25)
 point3 = Point(7, 36)
+
 triangle = Triangle(point1, point2, point3)
+# triangle.corner1 = '1'  #-> should return the 'raise TypeError'
+# triangle.corner2 = '2'  #-> should return the 'raise TypeError'
+# triangle.corner3 = Point(1, 2)
 
-
-print(triangle.square_abc)   
+print(triangle.square_abc)  #-> should return the square calculated over the  Point(1, 2)
